@@ -4,3 +4,13 @@ body {
      .nav {
     background-color: #b34848;
 }
+
+    .blog-post-title:hover{
+        text-decoration: underline;
+    }
+
+.blog-title,
+.blog-post-title,
+.side-title {
+    color: #b34848;
+}

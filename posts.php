@@ -1,7 +1,7 @@
 <?php 
     include('db.php');
 
-    $sql = "SELECT * FROM posts";
+    $sql = "SELECT * FROM posts ORDER BY Created_at";
 
     $statement = $connection->prepare($sql);
     $statement->execute();
