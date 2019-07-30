@@ -1,3 +1,9 @@
+<?php
+    include('db.php');
+
+    
+?>
+
 <body>
         <?php include('header.php'); ?>
 

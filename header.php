@@ -1,4 +1,5 @@
 <header>
+<link rel="stylesheet" type="text/css" href="styles/styles.css">
     <div class="blog-masthead">
         <div class="container">
             <nav class="nav">
