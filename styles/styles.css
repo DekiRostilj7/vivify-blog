@@ -41,3 +41,8 @@ a {
 }
 .single-comment {
     border-bottom: #b34848 solid 1px;
+}
+
+.hide {
+    display:none;
+}
