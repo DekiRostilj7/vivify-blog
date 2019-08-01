@@ -1,6 +1,6 @@
 <?php
 
-
+        include('db.php');
 
 
         $sqlComments =
@@ -13,6 +13,15 @@
         $statement->setFetchMode(PDO::FETCH_ASSOC);
 
         $comments = $statement->fetchAll();
+
+        if (isset($_GET['deleteId'])) {
+                // Za brisanje
+                
+                $sqlComments = "DELETE FROM comments WHERE Id = {$_GET['deleteId']}";
+                $statement = $connection->prepare($sqlComments);
+                $statement->execute();  
+                header("Location: single-post.php?post_id={$_GET['post_id']}");
+        }
 
 ?>
 <body>
@@ -28,17 +37,21 @@
 
 
                 <li  class="single-comment">
-                        <div>Posted by: <?php echo $comment['Author'] ?></div>
+                        <div>Posted by: <?php echo $comment['Author'] ?></div> 
+                        <a href="single-post.php?deleteId=<?php echo $comment['Id'] ?>&post_id=<?php echo $_GET['post_id'] ?>"><button>Delete</button></a>
                         <div> comment: <?php echo $comment['Text'] ?> </div>
                 </li>
        
+                             
+                         
 
+                        
        
         <?php } ?>
 
          </ul>
 
-        <button id= "button" onclick="hideComment()">Hide comments</button>
+        <button class="btn btn-default" id= "button" onclick="hideComment()">Hide comments</button>
         <script>
         var comments = document.getElementById('hide')
         var button = document.getElementById('button')

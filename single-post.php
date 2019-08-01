@@ -46,11 +46,45 @@
                 
                 
         </div>
-            <?php include('comments.php'); ?>
+        
+        <form class="addComment" action="create-comment.php" method="POST">
+            <label name="dodajKomentar" type="text">Dodaj komentar</label><br>
+            <input onchange="checkAuthor()" class="alert alert-danger" required type="text" name="author" placeholder="Autor komentara"><br>
+            <input type="hidden" name="postId" value="<?php echo $singlePost['Id']; ?>" >
+            
+            <textarea onchange="checkText()" class="alert alert-danger" required name="komentar" cols="30" rows="10" placeholder="Upisi komentar"></textarea>
+            <button type="submit">Submit</button>
+        </form>
 
+        <div>
+            <?php include('comments.php'); ?>
+        </div>
         <?php include('sidebar.php'); ?>
 
         <?php include('footer.php'); ?>
         </main>
+        
     </body>
+    <script>
+
+        function checkAuthor(){
+            var autor=document.getElementsByName("author");
+            
+            if(autor.innerHTML === ""){
+            autor.classList.add('alert-danger')
+
+            } else {
+                autor.classList.remove('alert-danger')
+                };
+        }
+        
+        function checkText(){
+            var text=document.getElementsByName("komentar");
+            if(text.innerHTML === ""){
+            text.classList.add('alert-danger');
+            } else {
+                text.classList.remove('alert-danger')
+                };
+        }
+    </script>
 </html>
