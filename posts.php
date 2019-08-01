@@ -1,7 +1,7 @@
 <?php 
     include('db.php');
 
-    $sql = "SELECT * FROM posts ORDER BY Created_at";
+    $sql = "SELECT * FROM posts ORDER BY Created_at desc";
 
     $statement = $connection->prepare($sql);
     $statement->execute();
@@ -14,14 +14,18 @@
 
 
 <html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    </head>
     <body>
         <?php 
         foreach($posts as $post ) { ?>
             <div class="blog-post">
-                <a href="single-post.php?title='Sample blog post'"><h2 class="blog-post-title">
+                <h2 class="blog-post-title" style="color:#b34848;"><a href="single-post.php?post_id=<?php echo($post['Id']) ?>">
                     <?php echo $post['Title']; ?>
-                </h2></a>       
-                <p> <?php echo $post['Body']; ?>
+                </a></h2>       
+                <p><?php echo $post['Created_at']; ?> <?php echo $post['Author'];?></p>
+                <p> <?php echo $post['Body']; ?> </p>
             </div><!-- /.blog-post -->
         <?php } ?>
 

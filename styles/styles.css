@@ -1,16 +1,43 @@
-body {
-    font-size: 14px;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
 }
-     .nav {
+
+html {
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: sans-serif;
+    color: #333;
+}
+
+
+h1,h2,h3 {
+    color: #b34848
+}
+
+a:hover {
+    color: #b34848;
+    text-decoration: underline;
+ 
+}
+
+a {
+    color:#b34848;
+}
+
+.blog-masthead {
     background-color: #b34848;
 }
-
-    .blog-post-title:hover{
-        text-decoration: underline;
-    }
-
-.blog-title,
-.blog-post-title,
-.side-title {
-    color: #b34848;
+.row {
+     display: flex !important;
 }
+.blog-post {
+    width: 70%;
+}
+.col-sm-8-blog-main {
+    width: 75%;
+}
+.single-comment {
+    border-bottom: #b34848 solid 1px;
