@@ -57,9 +57,10 @@
                 </a></h2>
                 <p><?php echo $singlePost['Created_at']; ?> by <?php echo $singlePost['Author'];?></p>
                 <p> <?php echo $singlePost['Body']; ?> </p>
-
-                <a href="single-post.php?postDeleteId=<?php echo $singlePost['Id'] ?>"><button class="btn btn-primary delPost">Delete this post</button></a>
                 
+                <form action="single-post.php?postDeleteId=<?php echo $singlePost['Id'] ?>" method="post" onsubmit="return confirm('Do you really want to delete this post?')">
+                    <input type="submit" name="Delete" class='btn btn-primary' value='Delete this post'>
+                </form>
         </div>
         
         <form class="addComment" action="create-comment.php" method="POST">
@@ -84,7 +85,7 @@
     </body>
     <script>
 
-        
+                  
 
         function checkAuthor(){
             var autor=document.getElementsByName("author");
