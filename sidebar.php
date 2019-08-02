@@ -11,9 +11,11 @@ $statement->setFetchMode(PDO::FETCH_ASSOC);
 ?>
 
 <aside class="col-sm-3 ml-sm-auto blog-sidebar">
+            <h3>Last 5 posts: </h3>
     <?php 
         foreach($posts as $post ) { ?>
             <div class="sidebar-module sidebar-module-inset">
+            
                 <h4 class="side-title"><a href="single-post.php?post_id=<?php echo($post['Id']) ?>">
                     <?php echo $post['Title']; ?>
                 </a></h4>

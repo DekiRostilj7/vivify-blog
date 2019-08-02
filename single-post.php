@@ -48,11 +48,11 @@
         </div>
         
         <form class="addComment" action="create-comment.php" method="POST">
-            <label name="dodajKomentar" type="text">Dodaj komentar</label><br>
-            <input onchange="checkAuthor()" class="alert alert-danger" required type="text" name="author" placeholder="Autor komentara"><br>
+            <label name="dodajKomentar" type="text">Add comment</label><br>
+            <input onchange="checkAuthor()" class="alert alert-danger" required type="text" name="author" placeholder="Author"><br>
             <input type="hidden" name="postId" value="<?php echo $singlePost['Id']; ?>" >
             
-            <textarea onchange="checkText()" class="alert alert-danger" required name="komentar" cols="30" rows="10" placeholder="Upisi komentar"></textarea>
+            <textarea onchange="checkText()" class="alert alert-danger" required name="komentar" cols="30" rows="10" placeholder="Enter your comment here"></textarea>
             <button type="submit">Submit</button>
         </form>
 
