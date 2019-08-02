@@ -68,6 +68,7 @@
             <input type="hidden" name="postId" value="<?php echo $singlePost['Id']; ?>" >
             
             <textarea onchange="checkText()" class="alert alert-danger" required name="komentar" cols="30" rows="10" placeholder="Enter your comment here"></textarea>
+
             <button class="btn btn-default" type="submit">Submit</button>
         </form>
 
