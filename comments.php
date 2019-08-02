@@ -37,9 +37,11 @@
 
 
                 <li  class="single-comment">
+                        
                         <div>Posted by: <?php echo $comment['Author'] ?></div> 
-                        <a href="single-post.php?deleteId=<?php echo $comment['Id'] ?>&post_id=<?php echo $_GET['post_id'] ?>"><button>Delete</button></a>
+                        
                         <div> comment: <?php echo $comment['Text'] ?> </div>
+                        <a href="single-post.php?deleteId=<?php echo $comment['Id'] ?>&post_id=<?php echo $_GET['post_id'] ?>"><button class="btn btn-default delbtn">Delete</button></a>
                 </li>
        
                              
